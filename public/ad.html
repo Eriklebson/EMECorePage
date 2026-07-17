@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=180, initial-scale=1.0" />
+  <title>E.M.E Core</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #c9a227;
+      --gold-light: #e6c44a;
+      --blue: #2d7dd2;
+      --purple: #7b3fa0;
+      --bg: #0e0e18;
+      --bg-card: #16162a;
+      --text: #f0f0f5;
+      --text-muted: #6a6a7a;
+      --border: #2a2a3a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 180px;
+      height: 320px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .ad-container {
+      width: 180px;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Header */
+    .ad-header {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .ad-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      margin: 0 auto 6px;
+      display: block;
+    }
+    .ad-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .ad-subtitle {
+      font-size: 7px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Content */
+    .ad-content {
+      flex: 1;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Feature Card */
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      transition: all 0.2s;
+    }
+    .feature-card:hover {
+      border-color: var(--gold);
+    }
+    .feature-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(201, 162, 39, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+    .feature-icon svg {
+      width: 14px;
+      height: 14px;
+      color: var(--gold);
+    }
+    .feature-name {
+      font-size: 9px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .feature-desc {
+      font-size: 7px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Stats */
+    .stats-row {
+      display: flex;
+      gap: 6px;
+    }
+    .stat-box {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 6px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .stat-label {
+      font-size: 6px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* CTA */
+    .ad-cta {
+      margin-top: auto;
+      padding: 10px;
+    }
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      background: linear-gradient(135deg, var(--gold), #9a7b1a);
+      color: #0a0a12;
+      text-align: center;
+      font-size: 9px;
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(201, 162, 39, 0.3);
+    }
+    .cta-hint {
+      text-align: center;
+      font-size: 6px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Version Badge */
+    .version-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(201, 162, 39, 0.15);
+      color: var(--gold);
+      font-size: 6px;
+      font-weight: 600;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad-container">
+    <span class="version-badge">v2.19</span>
+
+    <div class="ad-header">
+      <img src="https://eriklebson.github.io/EMECorePage/logo.png" alt="E.M.E" class="ad-logo" />
+      <div class="ad-title">E.M.E Core</div>
+      <div class="ad-subtitle">Game Launcher</div>
+    </div>
+
+    <div class="ad-content">
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Offline</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">WinUI</div>
+          <div class="stat-label">Nativo</div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="feature-name">Scanner Automatico</div>
+        <div class="feature-desc">Detecta jogos Steam, Xbox e pastas comuns</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><circle cx="16" cy="12" r="2"/></svg>
+        </div>
+        <div class="feature-name">Monitor de Hardware</div>
+        <div class="feature-desc">CPU, GPU, RAM, temps e FPS em tempo real</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="feature-name">Conquistas</div>
+        <div class="feature-desc">Parser de saves e notificacoes estilo Steam</div>
+      </div>
+    </div>
+
+    <div class="ad-cta">
+      <a href="https://github.com/Eriklebson/EMECore/releases" target="_blank" class="cta-btn">
+        Download Gratuito
+      </a>
+      <div class="cta-hint">GitHub • MIT License</div>
+    </div>
+  </div>
+</body>
+</html>
