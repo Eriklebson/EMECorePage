@@ -1,5 +1,17 @@
 <template>
   <div class="app">
+    <aside class="ad-sidebar" aria-label="Publicidade">
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+          data-ad-slot="XXXXXXXXXX"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
+      <span class="ad-label">pub</span>
+    </aside>
+
     <header class="header">
       <div class="header-content">
         <div class="logo-area">
@@ -711,7 +723,52 @@ export default {
   color: var(--text-secondary);
 }
 
+/* Ad Sidebar */
+.ad-sidebar {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  width: 160px;
+  padding: 8px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.ad-sidebar:hover {
+  opacity: 1;
+}
+
+.ad-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-label {
+  display: block;
+  text-align: center;
+  font-size: 0.55rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /* Responsive */
+@media (max-width: 1100px) {
+  .ad-sidebar {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .header-content {
     padding: 0.75rem 1rem;
