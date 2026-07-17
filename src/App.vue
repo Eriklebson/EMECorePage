@@ -197,6 +197,8 @@
         <div class="footer-links">
           <a href="https://github.com/Eriklebson/EMECore" target="_blank">GitHub</a>
           <a href="https://github.com/Eriklebson" target="_blank">Autor</a>
+          <a href="/EMECorePage/privacy.html">Privacidade</a>
+          <a href="/EMECorePage/terms.html">Termos</a>
         </div>
         <p class="footer-copy">&copy; 2026 E.M.E Company. Todos os direitos reservados.</p>
       </div>
