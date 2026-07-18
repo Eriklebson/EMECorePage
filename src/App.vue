@@ -131,6 +131,32 @@
             </a>
           </div>
 
+          <div class="app-card">
+            <div class="app-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="1.5">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+            </div>
+            <h3 class="app-name">E.M.E Core Mobile</h3>
+            <p class="app-desc">Controle remoto para o E.M.E Core. Monitore hardware, gerencie jogos e lance jogos do celular.</p>
+            <div class="app-features">
+              <span class="feature">Auto-Discovery</span>
+              <span class="feature">Monitor HW</span>
+              <span class="feature">Lancamento Remoto</span>
+              <span class="feature">Conquistas</span>
+            </div>
+            <div class="app-status">
+              <span class="status-badge status-soon">Prototipo</span>
+            </div>
+            <a
+              href="/EMECorePage/mobile.html"
+              class="btn btn-card"
+            >
+              Saiba Mais
+            </a>
+          </div>
+
           <div class="app-card app-card-soon">
             <div class="app-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5">
@@ -195,8 +221,9 @@
           <span class="footer-brand">E.M.E Company</span>
         </div>
         <div class="footer-links">
-          <a href="https://github.com/Eriklebson/EMECore" target="_blank">GitHub</a>
-          <a href="https://github.com/Eriklebson" target="_blank">Autor</a>
+          <a href="https://github.com/Eriklebson/EMECore" target="_blank">GitHub Desktop</a>
+          <a href="https://github.com/Eriklebson/EMECoreMobile" target="_blank">GitHub Mobile</a>
+          <a href="/EMECorePage/mobile.html">App Mobile</a>
           <a href="/EMECorePage/ads.html">Anuncios</a>
           <a href="/EMECorePage/privacy.html">Privacidade</a>
           <a href="/EMECorePage/terms.html">Termos</a>
