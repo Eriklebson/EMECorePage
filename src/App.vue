@@ -113,22 +113,29 @@
               <span class="status-badge status-live">Disponível</span>
               <span class="app-version" v-if="latestVersion">v{{ latestVersion }}</span>
             </div>
-            <a
-              v-if="latestRelease"
-              :href="downloadUrl"
-              class="btn btn-card"
-              target="_blank"
-            >
-              Download
-            </a>
-            <a
-              v-else
-              href="https://github.com/Eriklebson/EMECore/releases"
-              class="btn btn-card"
-              target="_blank"
-            >
-              Download
-            </a>
+            <div style="display: flex; gap: 0.5rem;">
+              <a
+                v-if="latestRelease"
+                :href="downloadUrl"
+                class="btn btn-card"
+                target="_blank"
+                style="flex: 1;"
+              >
+                Download
+              </a>
+              <a
+                v-else
+                href="https://github.com/Eriklebson/EMECore/releases"
+                class="btn btn-card"
+                target="_blank"
+                style="flex: 1;"
+              >
+                Download
+              </a>
+              <a href="/EMECorePage/eme-core.html" class="btn btn-card" style="flex: 1; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);">
+                Saiba Mais
+              </a>
+            </div>
           </div>
 
           <div class="app-card">
@@ -180,13 +187,19 @@
             <div class="app-status">
               <span class="status-badge status-live">Disponível</span>
             </div>
-            <a
-              href="https://github.com/Eriklebson/EMEDiagnostics/releases"
-              class="btn btn-card"
-              target="_blank"
-            >
-              Download
-            </a>
+            <div style="display: flex; gap: 0.5rem;">
+              <a
+                href="https://github.com/Eriklebson/EMEDiagnostics/releases"
+                class="btn btn-card"
+                target="_blank"
+                style="flex: 1;"
+              >
+                Download
+              </a>
+              <a href="/EMECorePage/diagnostics.html" class="btn btn-card" style="flex: 1; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);">
+                Saiba Mais
+              </a>
+            </div>
           </div>
 
           <div class="app-card app-card-soon">
