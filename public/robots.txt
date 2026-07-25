@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /ad.html
+
+Sitemap: https://eriklebson.github.io/EMECorePage/sitemap.xml
