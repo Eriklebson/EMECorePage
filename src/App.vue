@@ -22,8 +22,8 @@
           </div>
         </div>
         <nav class="nav">
-          <a href="#apps" class="nav-link">Apps</a>
           <a href="#about" class="nav-link">Sobre</a>
+          <a href="#apps" class="nav-link">Apps</a>
           <a href="https://github.com/Eriklebson" target="_blank" class="nav-link">GitHub</a>
         </nav>
       </div>
@@ -32,56 +32,77 @@
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="hero-content">
-        <img src="/logo.png" alt="E.M.E Core" class="hero-logo" />
+        <img src="/logo.png" alt="E.M.E" class="hero-logo" />
         <h2 class="hero-title">
-          E.M.E <span class="gold">Core</span>
+          Expor <span class="gold">E.M.E</span> Company
         </h2>
         <p class="hero-desc">
-          Launcher de jogos desktop nativo para Windows — organize, descubra e jogue seus jogos favoritos.
+          Somos tres amigos que criaram a E.M.E Company com o objetivo de desenvolver aplicativos gratuitos para ajudar no trabalho e nas atividades de jogos. As letras E.M.E representam as iniciais dos tres fundadores.
         </p>
         <div class="hero-badges">
-          <span class="badge badge-blue">WinUI 3</span>
-          <span class="badge badge-purple">.NET 8.0</span>
-          <span class="badge badge-gold">100% Offline</span>
+          <span class="badge badge-gold">Open Source</span>
+          <span class="badge badge-blue">Gratis</span>
+          <span class="badge badge-purple">Sem Mensalidade</span>
         </div>
         <div class="hero-actions">
-          <a
-            v-if="latestRelease"
-            :href="downloadUrl"
-            class="btn btn-primary"
-            target="_blank"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Download v{{ latestVersion }}
+          <a href="#apps" class="btn btn-primary">
+            Conhecer Nossos Apps
           </a>
-          <a
-            v-else
-            href="https://github.com/Eriklebson/EMECore/releases"
-            class="btn btn-primary"
-            target="_blank"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Download
-          </a>
-          <a
-            href="https://github.com/Eriklebson/EMECore"
-            class="btn btn-secondary"
-            target="_blank"
-          >
-            Ver no GitHub
+          <a href="#about" class="btn btn-secondary">
+            Sobre Nos
           </a>
         </div>
-        <p v-if="latestRelease" class="release-date">
-          Último release: {{ formatDate(latestRelease.published_at) }}
-        </p>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="section-content">
+        <h2 class="section-title">
+          Quem Somos
+        </h2>
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-icon gold">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3>Tres Amigos, Uma Ideia</h3>
+            <p>A E.M.E Company nasceu da amizade de tres pessoas que decidiram juntar suas habilidades para criar algo util. As letras E.M.E representam as iniciais dos tres fundadores — por enquanto mantemos seus nomes em segredo.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <h3>Apps Para Ajudar</h3>
+            <p>Comecamos desenvolvendo aplicativos para facilitar nosso proprio trabalho e atividades de jogos. Cada ferramenta e criada para resolver problemas reais que nos mesmos enfrentamos.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon purple">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3>Gratis e Open Source</h3>
+            <p>Nossa filosofia e disponibilizar tudo de forma gratuita e aberta. Sem mensalidades, sem travas. O sustento vem apenas de anuncios nao intrusivos no site — nada que atrapalhe sua experiencia.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon gold">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <h3>Em Construcao</h3>
+            <p>A empresa ainda nao foi formalmente criada — estamos no inicio da jornada. Mas ja estamos trabalhando forte para entregar ferramentas que fazem diferenca no dia a dia.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -216,44 +237,6 @@
               <span class="status-badge status-soon">Em breve</span>
             </div>
             <button class="btn btn-card btn-disabled" disabled>Em breve</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section section-alt">
-      <div class="section-content">
-        <h2 class="section-title">
-          Sobre a <span class="gold">E.M.E</span> Company
-        </h2>
-        <div class="about-grid">
-          <div class="about-card">
-            <div class="about-icon gold">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <h3>Qualidade</h3>
-            <p>Aplicativos nativos Windows com performance e experiência premium.</p>
-          </div>
-          <div class="about-card">
-            <div class="about-icon blue">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
-            </div>
-            <h3>Privacidade</h3>
-            <p>100% offline. Seus dados ficam no seu PC, sem coleta de dados.</p>
-          </div>
-          <div class="about-card">
-            <div class="about-icon purple">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-              </svg>
-            </div>
-            <h3>Performance</h3>
-            <p>C# WinUI 3 nativo, baixo consumo de RAM e CPU.</p>
           </div>
         </div>
       </div>
