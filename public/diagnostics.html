@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E.M.E Diagnostics - Diagnóstico, Monitoramento e Stress Test para Windows</title>
+  <meta name="description" content="Suíte profissional de diagnóstico, monitoramento e teste de estresse para PCs Windows. CPU, GPU, RAM, disco com relatórios PDF. Open source, 100% offline." />
+  <meta name="keywords" content="diagnostics, stress test, CPU test, GPU test, RAM test, hardware monitor, Windows, .NET 8, WinUI 3, DirectX 11, open source, EME" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://eriklebson.github.io/EMECorePage/diagnostics.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eriklebson.github.io/EMECorePage/diagnostics.html" />
+  <meta property="og:title" content="E.M.E Diagnostics - Diagnóstico e Stress Test para Windows" />
+  <meta property="og:description" content="Suíte profissional de diagnóstico, monitoramento e teste de estresse para PCs Windows." />
+  <meta property="og:image" content="https://eriklebson.github.io/EMECorePage/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #c9a227;
+      --green: #4CCBA0;
+      --green-dark: #3aa882;
+      --blue: #2d7dd2;
+      --purple: #7b3fa0;
+      --red: #E84D4D;
+      --yellow: #E6A030;
+      --bg-dark: #0A0B0D;
+      --bg-card: #2A2D31;
+      --bg-surface: #1a1d21;
+      --text-primary: #E8E9EB;
+      --text-secondary: #8a8a9a;
+      --text-muted: #5a5a6a;
+      --border-color: #3a3d41;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--green); font-size: 0.85rem; font-weight: 500; margin-bottom: 2rem; text-decoration: none; }
+    .back-link:hover { text-decoration: underline; }
+    .green { color: var(--green); }
+
+    /* Hero */
+    .hero { text-align: center; margin-bottom: 4rem; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 0.5rem; }
+    .hero-sub { font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 1.5rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; }
+    .badge { padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .b-green { background: rgba(76,203,160,0.15); color: var(--green); border: 1px solid rgba(76,203,160,0.3); }
+    .b-blue { background: rgba(45,125,210,0.15); color: var(--blue); border: 1px solid rgba(45,125,210,0.3); }
+    .b-purple { background: rgba(123,63,160,0.15); color: #9d5fc0; border: 1px solid rgba(123,63,160,0.3); }
+    .actions { display: flex; gap: 1rem; justify-content: center; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 10px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.25s; }
+    .btn-green { background: linear-gradient(135deg, var(--green), var(--green-dark)); color: #0A0B0D; }
+    .btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(76,203,160,0.35); }
+    .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-color); }
+    .btn-outline:hover { border-color: var(--green); color: var(--green); }
+
+    /* Features */
+    .section-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 1.5rem; text-align: center; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 4rem; }
+    .feature-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; transition: border-color 0.3s; }
+    .feature-card:hover { border-color: var(--green); }
+    .feature-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(76,203,160,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .feature-icon svg { width: 20px; height: 20px; color: var(--green); }
+    .feature-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .feature-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+
+    /* Tech Stack */
+    .tech-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 4rem; }
+    .tech-badge { display: flex; align-items: center; gap: 0.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 0.75rem 1.25rem; }
+    .tech-badge span { font-size: 0.85rem; font-weight: 500; }
+
+    /* Architecture */
+    .arch-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; margin-bottom: 4rem; }
+    .arch-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
+    .arch-tree { font-family: 'Consolas', monospace; font-size: 0.8rem; color: var(--green); line-height: 1.8; white-space: pre; overflow-x: auto; }
+
+    /* Theme */
+    .theme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 4rem; }
+    .color-card { border-radius: 10px; padding: 1.5rem; text-align: center; }
+    .color-card .name { font-size: 0.75rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .color-card .hex { font-size: 0.65rem; font-family: monospace; opacity: 0.8; }
+
+    /* Related */
+    .related-section { margin-bottom: 4rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .related-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; transition: border-color 0.3s; text-decoration: none; color: inherit; display: block; }
+    .related-card:hover { border-color: var(--gold); }
+    .related-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .related-card p { font-size: 0.85rem; color: var(--text-secondary); }
+
+    footer { border-top: 1px solid var(--border-color); text-align: center; padding: 1.5rem; font-size: 0.75rem; color: var(--text-secondary); margin-top: 3rem; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/EMECorePage/" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Voltar ao inicio
+    </a>
+
+    <div class="hero">
+      <div class="badges">
+        <span class="badge b-green">Diagnostico</span>
+        <span class="badge b-blue">WinUI 3</span>
+        <span class="badge b-purple">.NET 8.0</span>
+      </div>
+      <h1>E.M.E <span class="green">Diagnostics</span></h1>
+      <p class="hero-sub">Suíte profissional de diagnóstico, monitoramento e teste de estresse para PCs Windows com identidade visual Cyber Dark.</p>
+      <div class="actions">
+        <a href="https://github.com/Eriklebson/EMEDiagnostics/releases" class="btn btn-green" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+        <a href="https://github.com/Eriklebson/EMEDiagnostics" class="btn btn-outline" target="_blank">Ver no GitHub</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Funcionalidades</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Dashboard</h3>
+        <p>Monitoramento em tempo real de CPU, GPU, RAM, disco, rede, fans e periféricos.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Teste de CPU</h3>
+        <p>Estresse multithread com seletor de duração, gráfico de temperatura e uso.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/></svg></div>
+        <h3>Teste de RAM</h3>
+        <p>Alocação progressiva em chunks de 256 MB até 100% da RAM disponível.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/></svg></div>
+        <h3>Teste de GPU</h3>
+        <p>Motor nativo C++/DirectX 11 com cena procedural medieval (PBR, sombras, bloom).</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <h3>Teste de Storage</h3>
+        <p>Escrita e leitura com 16 streams paralelos, sem buffering do sistema.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3>Relatórios PDF</h3>
+        <p>Exportação com QuestPDF: hardware, sensores min/méd/máx, metadados do teste.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Stack Técnico</h2>
+    <div class="tech-grid">
+      <div class="tech-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="#512BD4"><path d="M12 0C5.37 0 5.37 0 12 0s6.63 0 6.63 0L12 24 5.37 0H12z"/></svg><span>.NET 8.0</span></div>
+      <div class="tech-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="#239120"><path d="M12 0C5.37 0 5.37 0 12 0s6.63 0 6.63 0L12 24 5.37 0H12z"/></svg><span>C# 12</span></div>
+      <div class="tech-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="#00599C"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.405-.6-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg><span>C++</span></div>
+      <div class="tech-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="#00B4EF"><path d="M0 0h24v24H0V0z"/></svg><span>DirectX 11</span></div>
+      <div class="tech-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="#003B57"><path d="M12 0C5.37 0 5.37 0 12 0s6.63 0 6.63 0L12 24 5.37 0H12z"/></svg><span>SQLite</span></div>
+    </div>
+
+    <div class="arch-card">
+      <h3>Arquitetura</h3>
+      <div class="arch-tree">EME.Diagnostics.App (WinUI 3 - MVVM)
+├── EME.Diagnostics.Core        (Modelos e contratos)
+├── EME.Diagnostics.Hardware    (Coleta de sensores)
+├── EME.Diagnostics.Services    (Orquestração)
+├── EME.Diagnostics.Reporting   (Relatórios PDF)
+├── EME.Diagnostics.GpuEngine   (C++ DirectX 11)
+└── EME.Diagnostics.Shared      (Constantes)</div>
+    </div>
+
+    <h2 class="section-title">Tema Cyber Dark</h2>
+    <div class="theme-grid">
+      <div class="color-card" style="background:#0A0B0D;border:1px solid var(--border-color)"><div class="name">Fundo</div><div class="hex">#0A0B0D</div></div>
+      <div class="color-card" style="background:#2A2D31;border:1px solid var(--border-color)"><div class="name">Cartão</div><div class="hex">#2A2D31</div></div>
+      <div class="color-card" style="background:#4CCBA0"><div class="name" style="color:#0A0B0D">Acento</div><div class="hex" style="color:#0A0B0D">#4CCBA0</div></div>
+      <div class="color-card" style="background:#E6A030"><div class="name" style="color:#0A0B0D">Aviso</div><div class="hex" style="color:#0A0B0D">#E6A030</div></div>
+      <div class="color-card" style="background:#E84D4D"><div class="name" style="color:#fff">Perigo</div><div class="hex" style="color:#fff">#E84D4D</div></div>
+      <div class="color-card" style="background:#E8E9EB"><div class="name" style="color:#0A0B0D">Texto</div><div class="hex" style="color:#0A0B0D">#E8E9EB</div></div>
+    </div>
+
+    <div class="related-section">
+      <h2 class="section-title">Ecossistema E.M.E</h2>
+      <div class="related-grid">
+        <a href="/EMECorePage/" class="related-card">
+          <h4>E.M.E Core</h4>
+          <p>Game launcher nativo para Windows com scanner automático, biblioteca visual e monitor de hardware.</p>
+        </a>
+        <a href="/EMECorePage/mobile.html" class="related-card">
+          <h4>E.M.E Core Mobile</h4>
+          <p>Controle remoto para o E.M.E Core. Monitore hardware e lance jogos do celular.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <footer>&copy; 2026 E.M.E Company. Todos os direitos reservados.</footer>
+</body>
+</html>

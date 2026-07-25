@@ -4,12 +4,115 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/EMECorePage/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Expor EME Company - Launcher de jogos desktop inspirado no Steam" />
+
+    <!-- SEO Meta Tags -->
+    <title>Expor E.M.E Company - Game Launcher, Diagnostics e Controle Remoto para Windows</title>
+    <meta name="description" content="E.M.E Company desenvolve aplicativos nativos Windows para gamers: E.M.E Core (game launcher), E.M.E Diagnostics (diagnóstico e stress test) e E.M.E Core Mobile (controle remoto). 100% offline, open source." />
+    <meta name="keywords" content="game launcher, Windows, hardware monitor, stress test, diagnostics, controle remoto, Steam, Xbox, GPU, CPU, RAM, EME, E.M.E Core, E.M.E Diagnostics, open source, WinUI 3, .NET 8" />
+    <meta name="author" content="Eriklebson" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://eriklebson.github.io/EMECorePage/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://eriklebson.github.io/EMECorePage/" />
+    <meta property="og:title" content="Expor E.M.E Company - Game Launcher, Diagnostics e Controle Remoto" />
+    <meta property="og:description" content="Aplicativos nativos Windows para gamers: E.M.E Core (game launcher), E.M.E Diagnostics (diagnóstico e stress test) e E.M.E Core Mobile (controle remoto)." />
+    <meta property="og:image" content="https://eriklebson.github.io/EMECorePage/logo.png" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="E.M.E Company" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://eriklebson.github.io/EMECorePage/" />
+    <meta name="twitter:title" content="Expor E.M.E Company - Game Launcher, Diagnostics e Controle Remoto" />
+    <meta name="twitter:description" content="Aplicativos nativos Windows para gamers: E.M.E Core, E.M.E Diagnostics e E.M.E Core Mobile." />
+    <meta name="twitter:image" content="https://eriklebson.github.io/EMECorePage/logo.png" />
+
+    <!-- Theme Color -->
     <meta name="theme-color" content="#0a0a12" />
-    <title>Expor EME Company</title>
+    <meta name="msapplication-TileColor" content="#0a0a12" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "E.M.E Company",
+      "url": "https://eriklebson.github.io/EMECorePage/",
+      "logo": "https://eriklebson.github.io/EMECorePage/logo.png",
+      "description": "Desenvolvedora de aplicativos nativos Windows para gamers",
+      "founder": {
+        "@type": "Person",
+        "name": "Eriklebson",
+        "url": "https://github.com/Eriklebson"
+      },
+      "sameAs": [
+        "https://github.com/Eriklebson/EMECore",
+        "https://github.com/Eriklebson/EMECoreMobile",
+        "https://github.com/Eriklebson/EMEDiagnostics"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Aplicativos E.M.E",
+        "itemListElement": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "E.M.E Core",
+            "applicationCategory": "GameApplication",
+            "operatingSystem": "Windows 10/11",
+            "description": "Game launcher nativo para Windows com scanner automático, biblioteca visual, monitor de hardware e conquistas",
+            "url": "https://github.com/Eriklebson/EMECore",
+            "downloadUrl": "https://github.com/Eriklebson/EMECore/releases",
+            "softwareVersion": "2.19.1.0",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "E.M.E Core Mobile",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Android",
+            "description": "Controle remoto para o E.M.E Core - monitore hardware, gerencie jogos e lance jogos do celular",
+            "url": "https://github.com/Eriklebson/EMECoreMobile",
+            "isPartOf": {
+              "@type": "SoftwareApplication",
+              "name": "E.M.E Core"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "E.M.E Diagnostics",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Windows 10/11",
+            "description": "Suíte profissional de diagnóstico, monitoramento e teste de estresse para PCs Windows",
+            "url": "https://github.com/Eriklebson/EMEDiagnostics",
+            "downloadUrl": "https://github.com/Eriklebson/EMEDiagnostics/releases",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Consent Mode -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}

@@ -157,6 +157,38 @@
             </a>
           </div>
 
+          <div class="app-card">
+            <div class="app-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CCBA0" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+                <line x1="6" y1="10" x2="6" y2="14" />
+                <line x1="10" y1="8" x2="10" y2="14" />
+                <line x1="14" y1="10" x2="14" y2="14" />
+                <line x1="18" y1="9" x2="18" y2="14" />
+              </svg>
+            </div>
+            <h3 class="app-name">E.M.E Diagnostics</h3>
+            <p class="app-desc">Suíte profissional de diagnóstico, monitoramento e teste de estresse para PCs Windows.</p>
+            <div class="app-features">
+              <span class="feature">Dashboard HW</span>
+              <span class="feature">Stress CPU/GPU</span>
+              <span class="feature">Teste RAM</span>
+              <span class="feature">Relatórios PDF</span>
+            </div>
+            <div class="app-status">
+              <span class="status-badge status-live">Disponível</span>
+            </div>
+            <a
+              href="https://github.com/Eriklebson/EMEDiagnostics/releases"
+              class="btn btn-card"
+              target="_blank"
+            >
+              Download
+            </a>
+          </div>
+
           <div class="app-card app-card-soon">
             <div class="app-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5">
@@ -221,8 +253,9 @@
           <span class="footer-brand">E.M.E Company</span>
         </div>
         <div class="footer-links">
-          <a href="https://github.com/Eriklebson/EMECore" target="_blank">GitHub Desktop</a>
-          <a href="https://github.com/Eriklebson/EMECoreMobile" target="_blank">GitHub Mobile</a>
+          <a href="https://github.com/Eriklebson/EMECore" target="_blank">EMECore</a>
+          <a href="https://github.com/Eriklebson/EMECoreMobile" target="_blank">EMECore Mobile</a>
+          <a href="https://github.com/Eriklebson/EMEDiagnostics" target="_blank">EMEDiagnostics</a>
           <a href="/EMECorePage/mobile.html">App Mobile</a>
           <a href="/EMECorePage/ads.html">Anuncios</a>
           <a href="/EMECorePage/privacy.html">Privacidade</a>
