@@ -45,8 +45,20 @@
         </div>
         <div class="hero-actions">
           <a
-            href="/EMECorePage/eme-core.html"
+            href="https://apps.microsoft.com/detail/9ntj7p8rqmb2?hl=pt-BR&gl=BR"
             class="btn btn-primary"
+            target="_blank"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Microsoft Store
+          </a>
+          <a
+            href="/EMECorePage/eme-core.html"
+            class="btn btn-secondary"
           >
             Saiba Mais
           </a>
@@ -121,6 +133,9 @@
               <span class="app-version" v-if="latestVersion">v{{ latestVersion }}</span>
             </div>
             <div style="display: flex; gap: 0.5rem;">
+              <a href="https://apps.microsoft.com/detail/9ntj7p8rqmb2?hl=pt-BR&gl=BR" class="btn btn-card" target="_blank" style="flex: 1;">
+                Store
+              </a>
               <a href="/EMECorePage/eme-core.html" class="btn btn-card" style="flex: 1; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);">
                 Saiba Mais
               </a>
