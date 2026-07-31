@@ -24,7 +24,6 @@
         <nav class="nav">
           <a href="https://eriklebson.github.io/" class="nav-link">E.M.E Company</a>
           <a href="#apps" class="nav-link">Apps</a>
-          <a href="https://github.com/Eriklebson/EMECore" target="_blank" class="nav-link">GitHub</a>
         </nav>
       </div>
     </header>
@@ -46,42 +45,12 @@
         </div>
         <div class="hero-actions">
           <a
-            v-if="latestRelease"
-            :href="downloadUrl"
+            href="/EMECorePage/eme-core.html"
             class="btn btn-primary"
-            target="_blank"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Download v{{ latestVersion }}
-          </a>
-          <a
-            v-else
-            href="https://github.com/Eriklebson/EMECore/releases"
-            class="btn btn-primary"
-            target="_blank"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Download
-          </a>
-          <a
-            href="https://github.com/Eriklebson/EMECore"
-            class="btn btn-secondary"
-            target="_blank"
-          >
-            Ver no GitHub
+            Saiba Mais
           </a>
         </div>
-        <p v-if="latestRelease" class="release-date">
-          Ultimo release: {{ formatDate(latestRelease.published_at) }}
-        </p>
       </div>
     </section>
 
@@ -152,24 +121,6 @@
               <span class="app-version" v-if="latestVersion">v{{ latestVersion }}</span>
             </div>
             <div style="display: flex; gap: 0.5rem;">
-              <a
-                v-if="latestRelease"
-                :href="downloadUrl"
-                class="btn btn-card"
-                target="_blank"
-                style="flex: 1;"
-              >
-                Download
-              </a>
-              <a
-                v-else
-                href="https://github.com/Eriklebson/EMECore/releases"
-                class="btn btn-card"
-                target="_blank"
-                style="flex: 1;"
-              >
-                Download
-              </a>
               <a href="/EMECorePage/eme-core.html" class="btn btn-card" style="flex: 1; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);">
                 Saiba Mais
               </a>
@@ -226,14 +177,6 @@
               <span class="status-badge status-live">Disponível</span>
             </div>
             <div style="display: flex; gap: 0.5rem;">
-              <a
-                href="https://github.com/Eriklebson/EMEDiagnostics/releases"
-                class="btn btn-card"
-                target="_blank"
-                style="flex: 1;"
-              >
-                Download
-              </a>
               <a href="/EMECorePage/diagnostics.html" class="btn btn-card" style="flex: 1; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);">
                 Saiba Mais
               </a>
@@ -266,9 +209,8 @@
           <span class="footer-brand">E.M.E Company</span>
         </div>
         <div class="footer-links">
-          <a href="https://github.com/Eriklebson/EMECore" target="_blank">EMECore</a>
-          <a href="https://github.com/Eriklebson/EMECoreMobile" target="_blank">EMECore Mobile</a>
-          <a href="https://github.com/Eriklebson/EMEDiagnostics" target="_blank">EMEDiagnostics</a>
+          <a href="/EMECorePage/eme-core.html">E.M.E Core</a>
+          <a href="/EMECorePage/diagnostics.html">E.M.E Diagnostics</a>
           <a href="/EMECorePage/mobile.html">App Mobile</a>
           <a href="/EMECorePage/ads.html">Anuncios</a>
           <a href="/EMECorePage/privacy.html">Privacidade</a>
@@ -284,45 +226,7 @@
 export default {
   name: 'App',
   data() {
-    return {
-      latestRelease: null,
-      latestVersion: null,
-    }
-  },
-  computed: {
-    downloadUrl() {
-      if (!this.latestRelease) return '#'
-      const asset = this.latestRelease.assets?.find(a =>
-        a.name.endsWith('.exe') || a.name.endsWith('.zip') || a.name.endsWith('.msix')
-      )
-      return asset ? asset.browser_download_url : this.latestRelease.html_url
-    },
-  },
-  mounted() {
-    this.fetchLatestRelease()
-  },
-  methods: {
-    async fetchLatestRelease() {
-      try {
-        const response = await fetch(
-          'https://api.github.com/repos/Eriklebson/EMECore/releases/latest'
-        )
-        if (response.ok) {
-          this.latestRelease = await response.json()
-          this.latestVersion = this.latestRelease.tag_name?.replace(/^v/, '') || ''
-        }
-      } catch (e) {
-        console.warn('Não foi possível buscar releases:', e)
-      }
-    },
-    formatDate(dateStr) {
-      if (!dateStr) return ''
-      return new Date(dateStr).toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      })
-    },
+    return {}
   },
 }
 </script>
